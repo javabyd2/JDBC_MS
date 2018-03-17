@@ -15,7 +15,7 @@ public class DBConnectorNew {
     private final static String PARMAS = "useSSL=false&serverTimezone=UTC";
 
 
-    private static void loadDriver() {      // podlaczamy driva
+    private static void loadDriver() {
         try {
             Class.forName(DRIVER);
         } catch (Exception e) {
@@ -23,7 +23,7 @@ public class DBConnectorNew {
         }
     }
 
-    private static void loadConnection() {    // metoda load connection
+    private static void loadConnection() {
         try {
             connection = DriverManager.getConnection(getFormatedURL(), USER, PASSWORD);
         } catch (SQLException e) {
@@ -31,12 +31,12 @@ public class DBConnectorNew {
         }
     }
 
-    private static String getFormatedURL() {       //  tworzymy stringa do adresu i przypisujemy go powyzej  do connection
+    private static String getFormatedURL() {
         return ADDRESS + ":" + PORT + "/" + DATABASE + "?" + PARMAS;
     }
 
 
-    public static Connection getConnection() {   // tworzymy sigletona zeby tylko zrobic 1 instancje klasy
+    public static Connection getConnection() {
         if (connection == null) {
             loadDriver();
             loadConnection();
@@ -44,7 +44,7 @@ public class DBConnectorNew {
         return connection;
     }
 
-    public static void closeConnection() {                   // zamykamy sigletona
+    public static void closeConnection() {
         if (connection == null) {
             System.out.println("nothing to close");
         } else {
