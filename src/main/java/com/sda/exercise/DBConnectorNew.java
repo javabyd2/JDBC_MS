@@ -13,8 +13,7 @@ public class DBConnectorNew {
     private final static String PORT = "3306";
     private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
     private final static String PARMAS = "useSSL=false&serverTimezone=UTC";
-
-
+    
     private static void loadDriver() {
         try {
             Class.forName(DRIVER);

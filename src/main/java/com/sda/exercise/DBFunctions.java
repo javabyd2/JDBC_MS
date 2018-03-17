@@ -1,5 +1,4 @@
 package com.sda.exercise;
-
 import java.sql.*;
 import java.util.Scanner;
 
